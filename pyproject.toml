@@ -1,0 +1,27 @@
+[project]
+name = "ragproof"
+version = "0.1.0"
+description = "RAG you can measure: deterministic chunking, pure-Python BM25 + pluggable vector search with RRF hybrid fusion, retrieval metrics (recall@k, MRR), and cite-or-refuse grounded answering."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Vish Magapu", email = "vmagapu@gmail.com" }]
+keywords = ["rag", "retrieval", "bm25", "llm", "grounding", "citations", "evals"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/vmagapu/ragproof"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ragproof"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
